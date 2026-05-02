@@ -1,8 +1,0 @@
-async def get_sbahn_delay(station_id, line):
-    url = f"https://api.deutschebahn.com/timetables/v1/plan/{station_id}/"
-    headers = {"Authorization": f"Bearer {os.getenv('DB_API_KEY')}"}
-
-    async with httpx.AsyncClient() as client:
-        r = await client.get(url, headers=headers)
-        # Parse XML for delays (DB returns XML)
-        # Extract delay for your specific line
